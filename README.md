@@ -11,7 +11,6 @@
 7. **Space**
 ---
 
-````md
 ---
 
 ## 📐 Concept: LinearLayout — Organizing Views Vertically & Horizontally
@@ -100,11 +99,10 @@ A simplified example showing an image, text, and buttons arranged using LinearLa
             android:text="Comment" />
     </LinearLayout>
 </LinearLayout>
-````
 
 ---
 
-#### 🧩 Your Example (Extended & Practical)
+#### 🧩 our Example (Extended & Practical)
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
