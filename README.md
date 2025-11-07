@@ -99,7 +99,7 @@ A simplified example showing an image, text, and buttons arranged using LinearLa
             android:text="Comment" />
     </LinearLayout>
 </LinearLayout>
-
+```
 ---
 
 #### 🧩 our Example (Extended & Practical)
@@ -259,5 +259,3 @@ Think of it like **a column of posts or chat messages**, one after another — c
 
 ---
 
-```
-```
