@@ -210,7 +210,7 @@ WhatsApp Chat Row: Profile icon, message text, and timestamp in a horizontal row
 
 Google Keep Notes: Title + Content stacked vertically with equal spacing.
 
-## 6️⃣ ⚠️ Common Mistakes / Gotchas
+6️⃣ ⚠️ Common Mistakes / Gotchas
 ❌ Mistake	💡 Fix
 Using both layout_weight and match_parent together	Use 0dp width when using weights
 Over-nesting multiple LinearLayouts	Replace with ConstraintLayout for performance
