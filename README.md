@@ -259,3 +259,141 @@ Think of it like **a column of posts or chat messages**, one after another — c
 
 ---
 
+---
+
+## 🔤 Definition (RelativeLayout)
+**RelativeLayout** is a ViewGroup in Android that allows you to **position child views relative to each other or to the parent container**.  
+It gives flexibility to create dynamic layouts — e.g., align one view to another’s bottom, right, or center — without strict linear order.
+
+---
+
+## 📱 Code Example Reference (Based on Popular App)
+**App Reference:** Instagram’s profile screen layout — the “Edit Profile” button and user stats are aligned **relative to each other**, similar to how RelativeLayout positions elements.
+
+---
+
+### 1️⃣ Concept Overview
+- **RelativeLayout** helps you align UI components **based on relationships** — like “below,” “toRightOf,” “centerInParent,” etc.
+- Perfect for **non-linear UI arrangements** (e.g., overlapping elements, custom positioning).
+
+---
+
+### 2️⃣ Core Properties (Must-Mention Parameters)
+| Property | Description |
+|-----------|--------------|
+| `android:layout_below` | Positions a view **below** another view. |
+| `android:layout_above` | Positions a view **above** another view. |
+| `android:layout_toEndOf` / `layout_toRightOf` | Places a view **to the right** of another. |
+| `android:layout_alignParentStart` / `alignParentEnd` | Aligns view edges to **parent’s sides**. |
+| `android:layout_centerHorizontal` / `centerVertical` | Centers a view horizontally or vertically. |
+| `android:layout_alignBaseline` | Aligns text baselines between two views. |
+
+---
+
+### 3️⃣ 🧠 Mnemonics & Analogies (English + Urdu)
+| Mnemonic | English Meaning | Urdu Meaning |
+|-----------|----------------|---------------|
+| **“RELATE to place”** | Think of “Relative” as positioning things **in relation** to others. | "RelativeLayout میں views ایک دوسرے سے **تعلق کی بنیاد پر** رکھے جاتے ہیں۔" |
+| **“Center or Side?”** | Either center things or attach to parent sides. | "یا تو center کرو یا parent کے کنارے سے جوڑو۔" |
+| **“Below to flow”** | If you want something below another — use `layout_below`. | "کسی چیز کو نیچے رکھنا ہے؟ `layout_below` لگاؤ!" |
+
+---
+
+### 4️⃣ 💻 Code Snippet (Minimal + Practical)
+Here’s a simple **RelativeLayout** combining these ideas —  
+💡 **(based on the Instagram login screen pattern)**
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#121212">
+
+    <!-- Title TextView at the top center -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Relative Layout Demo"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+    <!-- Image below the title -->
+    <ImageView
+        android:id="@+id/demoImage"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_below="@id/titleText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+    <!-- Username label aligned to the left -->
+    <TextView
+        android:id="@+id/usernameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username:"
+        android:textColor="#BB86FC"
+        android:textSize="16sp"
+        android:layout_below="@id/demoImage"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp" />
+
+    <!-- Username input aligned to the right of label -->
+    <EditText
+        android:id="@+id/usernameInput"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter username"
+        android:textColorHint="#AAAAAA"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#BB86FC"
+        android:layout_toEndOf="@id/usernameLabel"
+        android:layout_alignBaseline="@id/usernameLabel"
+        android:layout_marginStart="10dp" />
+
+    <!-- Login button centered below username -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#6200EE"
+        android:layout_below="@id/usernameInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp" />
+
+</RelativeLayout>
+```
+
+---
+
+### 5️⃣ Real-World Analogy / App Reference
+
+Think of **RelativeLayout** like placing furniture in a room:
+
+* “Put the lamp **to the right of** the sofa.”
+* “Keep the rug **below** the table.”
+  That’s exactly how **RelativeLayout** arranges its children.
+
+📲 Used in **Instagram**, **LinkedIn**, and **Google Play Store** headers to align icons/text side-by-side relative to each other.
+
+---
+
+### 6️⃣ Common Mistakes / Gotchas
+
+| Mistake                           | Why It Happens                                                   | Fix                                           |
+| --------------------------------- | ---------------------------------------------------------------- | --------------------------------------------- |
+| Missing ID in referenced view     | `layout_below="@id/someView"` fails if `someView` has no ID.     | Always assign IDs before referencing.         |
+| Overlapping views unintentionally | Conflicting constraints (e.g., both `centerInParent` + `below`). | Use only one major positioning rule per axis. |
+| Hardcoding sizes                  | Breaks responsiveness on different screens.                      | Use `wrap_content` / `match_parent` wisely.   |
+| Mixing too many rules             | Creates layout confusion.                                        | Keep relationships simple and logical.        |
+
+---
+
