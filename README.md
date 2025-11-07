@@ -12,6 +12,7 @@
 ---
 
 ---
+## 📦 Concept: LinearLayout — Vertical & Horizontal Composition
 
 ````md
 ---
