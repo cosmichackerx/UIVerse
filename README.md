@@ -18,7 +18,7 @@
 
 ---
 
-## 🔤 Definitions (briefly for clarity)
+## 🔤 Definitions (LinearLayout)
 **LinearLayout** is a ViewGroup that arranges its children in a **single row or column** — either *vertically* or *horizontally*.  
 It’s one of the most used containers in Android UI design, perfect for simple, linear, and predictable layouts.
 
