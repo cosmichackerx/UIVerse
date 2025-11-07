@@ -222,6 +222,7 @@ Ignoring padding/margin consistency	Causes visual imbalance — always keep unif
 When designing simple list-like UIs (e.g., feed posts, settings rows, chat bubbles), start with LinearLayout, then migrate to ConstraintLayout for complex alignment.
 ---
 ---
+## 📦 Concept: RelativeLayout
 ---
 
 ## 🔤 Definitions (RelativeLayout)
