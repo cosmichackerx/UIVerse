@@ -218,8 +218,9 @@ Forgetting orientation	Default is horizontal — always specify it clearly
 Not using baselineAligned="false" for mixed views	Prevents alignment lag between images and texts
 Ignoring padding/margin consistency	Causes visual imbalance — always keep uniform spacing
 
-✨ Pro Tip:
-When designing simple list-like UIs (e.g., feed posts, settings rows, chat bubbles), start with LinearLayout, then migrate to ConstraintLayout for complex alignment.
+## ✨ Pro Tip:
+> When designing simple list-like UIs (e.g., feed posts, settings rows, chat bubbles), start with LinearLayout, then migrate to ConstraintLayout for complex alignment.
+
 ---
 ---
 ## 📦 Concept: RelativeLayout
