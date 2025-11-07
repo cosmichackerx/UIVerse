@@ -224,7 +224,7 @@ When designing simple list-like UIs (e.g., feed posts, settings rows, chat bubbl
 ---
 ---
 
-## 🔤 Definitions (Briefly for Clarity)
+## 🔤 Definitions (RelativeLayout)
 
 **RelativeLayout** is an Android ViewGroup that positions child views relative to each other or to the parent container. Unlike LinearLayout (which stacks views linearly), RelativeLayout allows flexible positioning using relationship-based attributes like `layout_below`, `layout_toEndOf`, `layout_alignParentTop`, etc.
 
@@ -299,17 +299,18 @@ This makes it powerful for screens like login forms, profile headers, chat bubbl
 
 ## 4️⃣ 💻 Code Examples
 
-### **Your Example (Annotated):**
+### ** Example :**
 
 ```xml
+
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
     android:background="#121212">
-    
-    <!-- ✅ Title TextView at the top center -->
+
+    <!-- Title TextView at the top center -->
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
@@ -317,20 +318,20 @@ This makes it powerful for screens like login forms, profile headers, chat bubbl
         android:text="Relative Layout Demo"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        android:layout_centerHorizontal="true"  <!-- 🎯 Centered horizontally -->
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp" />
-    
-    <!-- ✅ Image below the title -->
+
+    <!-- Image below the title -->
     <ImageView
         android:id="@+id/demoImage"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:src="@mipmap/ic_launcher"
-        android:layout_below="@id/titleText"  <!-- 🎯 Positioned BELOW titleText -->
+        android:layout_below="@id/titleText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp" />
-    
-    <!-- ✅ Username label aligned to the left -->
+
+    <!-- Username label aligned to the left -->
     <TextView
         android:id="@+id/usernameLabel"
         android:layout_width="wrap_content"
@@ -338,11 +339,11 @@ This makes it powerful for screens like login forms, profile headers, chat bubbl
         android:text="Username:"
         android:textColor="#BB86FC"
         android:textSize="16sp"
-        android:layout_below="@id/demoImage"  <!-- 🎯 Below image -->
-        android:layout_alignParentStart="true"  <!-- 🎯 Sticks to left edge -->
+        android:layout_below="@id/demoImage"
+        android:layout_alignParentStart="true"
         android:layout_marginTop="40dp" />
-    
-    <!-- ✅ Username input aligned to the right of label -->
+
+    <!-- Username input aligned to the right of label -->
     <EditText
         android:id="@+id/usernameInput"
         android:layout_width="200dp"
@@ -351,11 +352,11 @@ This makes it powerful for screens like login forms, profile headers, chat bubbl
         android:textColorHint="#AAAAAA"
         android:textColor="#FFFFFF"
         android:backgroundTint="#BB86FC"
-        android:layout_toEndOf="@id/usernameLabel"  <!-- 🎯 To the RIGHT of label -->
-        android:layout_alignBaseline="@id/usernameLabel"  <!-- 🎯 Aligns text baseline -->
+        android:layout_toEndOf="@id/usernameLabel"
+        android:layout_alignBaseline="@id/usernameLabel"
         android:layout_marginStart="10dp" />
-    
-    <!-- ✅ Login button centered below username -->
+
+    <!-- Login button centered below username -->
     <Button
         android:id="@+id/loginButton"
         android:layout_width="wrap_content"
@@ -363,11 +364,13 @@ This makes it powerful for screens like login forms, profile headers, chat bubbl
         android:text="Login"
         android:textColor="#FFFFFF"
         android:backgroundTint="#6200EE"
-        android:layout_below="@id/usernameInput"  <!-- 🎯 Below input field -->
-        android:layout_centerHorizontal="true"  <!-- 🎯 Centered horizontally -->
+        android:layout_below="@id/usernameInput"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp" />
-        
+
 </RelativeLayout>
+
+
 ```
 
 ---
@@ -375,34 +378,49 @@ This makes it powerful for screens like login forms, profile headers, chat bubbl
 ### **Additional Example: Instagram-Style Profile Header**
 
 ```xml
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!-- ISO/W3C compliant Android layout XML -->
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:padding="@dimen/default_start_margin"
+    android:fillViewport="true"
+    tools:context="com.example.testxml.MainActivity">
+
+
 <RelativeLayout
+    
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="16dp"
     android:background="#FFFFFF">
-    
+
     <!-- Profile Picture (left) -->
     <ImageView
         android:id="@+id/profilePic"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@drawable/profile_avatar"
+        android:src="@drawable/ic_launcher_foreground"
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true" />
-    
+
     <!-- Username (to the right of profile pic) -->
     <TextView
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@yourqueen"
+        android:text=" @yourqueen"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="#000000"
         android:layout_toEndOf="@id/profilePic"
         android:layout_marginStart="16dp"
         android:layout_alignTop="@id/profilePic" />
-    
+
     <!-- Bio (below username) -->
     <TextView
         android:id="@+id/bio"
@@ -415,7 +433,7 @@ This makes it powerful for screens like login forms, profile headers, chat bubbl
         android:layout_below="@id/username"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp" />
-    
+
     <!-- Follow Button (aligned to parent right) -->
     <Button
         android:id="@+id/followBtn"
@@ -426,8 +444,9 @@ This makes it powerful for screens like login forms, profile headers, chat bubbl
         android:textColor="#FFFFFF"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true" />
-        
+
 </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
 ```
 
 **App Reference**: **Instagram** – Profile screen with avatar, username, bio, and follow button
