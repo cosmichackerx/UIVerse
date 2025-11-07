@@ -201,3 +201,4 @@ Think of it like arranging *blocks in a straight line* — either top-to-bottom 
         android:text="Made with ❤️ using LinearLayout"
         android:textSize="14sp" />
 </LinearLayout>
+```
